@@ -1,0 +1,49 @@
+#include<stdio.h>
+int main()
+{
+	int N,F,B,T,FD,BD,p,total,i;
+	scanf("%d",&N);
+	for(i=0;i<N;i++)
+	{
+		p=0;total=0;//p=current position,total = total distance
+		scanf("%d%d%d%d%d", &F, &B, &T, &FD, &BD);
+		if(F>=FD)
+		{
+			p = FD*T;
+			printf("%dF\n",p);
+		}
+		else if(F == B)
+		{
+			printf("No Ditch\n");
+		}
+		else if(F>B)
+		{
+			while(!0)
+			{
+				p = p+F;
+				total = total+F;
+				if(p>=FD)
+				  break;
+				else
+				 p=p-B;
+				 total = total+B;
+			}
+			total = total-(p-FD);
+			printf("%dF\n",total*T);
+		}
+		else
+		{
+			while(!0)
+			{
+				p=p-F;
+				total=total+F;
+				p=p+B;
+				total=total+B;
+				if(p>=BD)
+				   break;
+			}
+			total=total-(p-BD);
+			printf("%dB\n",total*T);
+		}
+	}
+	return 0;
