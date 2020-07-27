@@ -1,0 +1,21 @@
+#include<stdio.h>
+//ABAAB
+//12340
+int main()
+{
+	int t,i,n; //t = test cases,n = num,i=iter
+	scanf("%d",&t);
+	for(i=0;i<t;i++)
+	{
+	scanf("%d",&n);
+	if(n%5==0 || n%5==2)
+	{
+		printf("No\n");
+	}
+	else
+	{
+		printf("Yes\n");
+	}
+}  
+	return 0;
+}
