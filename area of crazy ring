@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+#define SQUARE(num) (num)*(num)
+int main()
+{
+	double x1,y1,x2,y2,x3,y3,a,b,c;
+	scanf("%lf %lf",&x1,&y1);
+	scanf("%lf %lf",&x2,&y2);
+	scanf("%lf %lf",&x3,&y3);
+	a=sqrt(SQUARE(x2-x1)+SQUARE(y2-y1));
+    b=sqrt(SQUARE(x2-x3)+SQUARE(y2-y3));		
+	c=sqrt(SQUARE(x3-x1)+SQUARE(y3-y1));
+	if(a+b>c && b+c>a && c+a>b)
+	{
+		double area,a,s,A,r_in,r_out,area_in,area_out;//s=semi permieter A= area of triangle r_in=radius of inscribed circle r_out =radius of outer ciecle
+	
+		s = (a+b+c)/2;
+		A=sqrt(s*(s-a)*(s-b)*(s-c));
+		r_in = A/s;
+		r_out=(a*b*c)/(4*A);
+		area_in=(22/7.0)*r_in*r_in;
+		area_out=(22/7.0)*r_out*r_out;
+		area=area_out-area_in;
+		printf("%.2lf",area);
+	}
+	else
+	   printf("Not Possible");
+	return 0;
+}
