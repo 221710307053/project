@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	int t,iter;//testcases
+	scanf("%d",&t);
+	for(iter=1;iter<=t;iter++)
+	{
+	
+	char str[400];
+	int reqascii,i,count[27]={0};
+	scanf("%s",str);
+	for(i=0;str[i]!=NULL;i++)
+	{
+	
+	  reqascii = str[i]-96;
+	  count[reqascii]++;
+    }
+    for(i=1;i<=26;i++)
+    {
+    	if(count[i] != 0 && count[i] != i)
+		break; 
+	}
+	if(i>26)
+	{
+		printf("Super ASCII String\n");
+	}
+	else
+	{
+		printf("Not a Super ASCII String\n");
+	}
+}
+	return 0;
